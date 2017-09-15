@@ -1,0 +1,15 @@
+"0","remapB(center = get_city_coord(""上海""),"
+"0","       zoom = 13,"
+"0","       title = ""Remap:  上海地铁一号线"","
+"0","       color = ""Blue"","
+"0","       markLineData = subway[[2]],"
+"0","       markLineTheme = markLineControl(smoothness = 0,"
+"0","                                       effect = T,"
+"0","                                       symbolSize = c(0,0)),"
+"0","       geoData = subway[[1]])"
+"2","Please use your own baidu API!
+Set it using: options(remap.ak = ""XXXXX"")
+http://lbsyun.baidu.com"
+"1","Save img as:"
+"1"," "
+"1","C:\Users\zhengbin\AppData\Local\Temp\RtmpmIcdYq/ID_20170721161333_120671.html"

@@ -1,0 +1,193 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+参考文章：
+http://langdawei.com/REmap/page2/
+
+
+```{r}
+library(REmap)
+```
+
+```{r}
+remapB()
+```
+
+```{r}
+remapB(get_city_coord("北京"),zoom = 12)
+```
+```{r}
+remapB(get_city_coord("大连"), color = "Blue", zoom=12)
+```
+
+```{r}
+remapB(title = "Bmap 迁徙图示例",
+        color = "Blue",
+        markLineData = demoC,
+        markPointData = demoC[,2])
+```
+
+```{r}
+remapB(title = "Remap:  百度迁徙模拟",
+       color = "Blue",
+       markLineData = demoC)
+```
+
+```{r}
+markLineControl(symbolSize = c(2,4),
+      smoothness = 0.2,
+      effect = T,
+      lineWidth = 1,
+      lineType = 'solid',
+      color = "Random") 
+```
+
+```{r}
+remapB(title = "Remap:  百度迁徙模拟",
+       color = "Blue",
+       markLineData = demoC,
+       markLineTheme = markLineControl(symbolSize = c(0,0),
+                                       lineWidth = 10,
+                                       lineType = 'dashed'))
+```
+
+```{r}
+demoC$color = sample(c("red","blue"),10,replace = T)
+
+remapB(title = "Remap:  百度迁徙模拟",
+       color = "Blue",
+       markLineData = demoC,
+       markLineTheme = markLineControl(symbolSize = c(0,0),
+                                       lineWidth = 10,
+                                       effect = F,
+                                       lineType = 'dashed'))
+```
+
+```{r}
+get_geo_position(c("Beijing","Shanghai","Guangzhou"))
+```
+
+```{r}
+head(subway[[1]])
+```
+
+```{r}
+remapB(center = get_city_coord("上海"),
+       zoom = 13,
+       title = "Remap:  上海地铁一号线",
+       color = "Blue",
+       markLineData = subway[[2]],
+       markLineTheme = markLineControl(smoothness = 0,
+                                       effect = T,
+                                       symbolSize = c(0,0)),
+       geoData = subway[[1]])
+```
+
+```{r}
+remapB(title = "Remap:  百度模拟-标点",
+       color = "Blue",
+       markPointData = demoC[,2])
+```
+
+```{r}
+markPointControl(symbol = 'emptyCircle',
+                  symbolSize = "Random",
+                  effect = T,
+                  effectType = 'scale',
+                  color = "Random")
+```
+
+```{r}
+remapB(title = "Remap:  markPoint示例",
+       color = "Blue",
+       markPointData = demoC[,2],
+       markPointTheme = markPointControl(symbol = 
+      "image://https://lh3.googleusercontent.com/-Lp7pZIh_Am8/AAAAAAAAAAI/AAAAAAAAADQ/7vORCc61USg/s64-c/photo.jpg",
+                                        symbolSize = 15,
+                                       effect = F))
+```
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{r}
+pointData = data.frame(geoData$name,
+                       color = c(rep("skyblue",20),
+                                 rep("red",10)))
+
+
+
+remapB(get_city_coord("上海"),
+       zoom = 13,
+       title = "上海美食",
+       markPointData = pointData,
+       markPointTheme = markPointControl(symbol = 'pin',
+                                         symbolSize = 5,
+                                         effect = F),
+       geoData = geoData)
+```
+
+```{r}
+names(geoData) = names(subway[[1]])
+remapB(get_city_coord("上海"),
+       zoom = 13,
+       color = "Blue",
+       title = "Remap:  MarkPoint&MarkLine",
+       markPointData = pointData,
+       markPointTheme = markPointControl(symbol = 'pin',
+                                         symbolSize = 5,
+                                         effect = F),
+       markLineData = subway[[2]],
+       markLineTheme = markLineControl(symbolSize = c(0,0),
+                                       smoothness = 0),
+       geoData = rbind(geoData,subway[[1]]))
+```
+
+```{r}
+# 大连终端户分布
+
+dl_geoData = read.csv('D:/temp/POS_GPS_MAP1.csv', sep='\t')
+read.csv
+
+pointData = data.frame(dl_geoData$name,
+                       color = c(rep("skyblue",7),
+                                 rep("red",200)))
+
+
+
+remapB(get_city_coord("大连"),
+       zoom = 13,
+       title = "大连终端户分布",
+       markPointData = pointData,
+       markPointTheme = markPointControl(symbol = 'pin',
+                                         symbolSize = 5,
+                                         effect = F),
+       geoData = dl_geoData)
+```
+
+```{r}
+# 学习文章：http://www.jianshu.com/p/31c9194c95f3 
+```
+
+```{r}
+# print(dl_geoData$name)
+# print(dl_geoData)
+print(class(dl_geoData))
+```
+
+```{r}
+print(geoData)
+# print(class(geoData))
+```
+

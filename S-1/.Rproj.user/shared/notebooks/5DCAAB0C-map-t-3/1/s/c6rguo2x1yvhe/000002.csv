@@ -1,0 +1,13 @@
+"0","bjMap = getBaiduMap('北京',color = 'bw')"
+"2","trying URL 'http://api.map.baidu.com/staticimage?width=400&height=400&center=116.395645037879,39.9299857780802&zoom=10&scale=2'
+"
+"2","Content type 'image/png'"
+"2"," length 138132 bytes (134 KB)
+"
+"2","downloaded 134 KB
+
+"
+"2","Map from URL : http://api.map.baidu.com/staticimage?width=400&height=400&center=116.395645037879,39.9299857780802&zoom=10&scale=2
+"
+"0","df = getRoute('首都国际机场', '北京南苑机场')"
+"0","ggmap(bjMap) + geom_path(data = df, aes(lon, lat), alpha = 0.5, col = 'red')"

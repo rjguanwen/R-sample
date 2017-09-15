@@ -1,0 +1,14 @@
+"0","demoC$color = sample(c(""red"",""blue""),10,replace = T)"
+"0","remapB(title = ""Remap:  百度迁徙模拟"","
+"0","       color = ""Blue"","
+"0","       markLineData = demoC,"
+"0","       markLineTheme = markLineControl(symbolSize = c(0,0),"
+"0","                                       lineWidth = 10,"
+"0","                                       effect = F,"
+"0","                                       lineType = 'dashed'))"
+"2","Please use your own baidu API!
+Set it using: options(remap.ak = ""XXXXX"")
+http://lbsyun.baidu.com"
+"1","Save img as:"
+"1"," "
+"1","C:\Users\zhengbin\AppData\Local\Temp\RtmpmIcdYq/ID_20170721162032_162562.html"

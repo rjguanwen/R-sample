@@ -1,0 +1,8 @@
+"0","library(devtools)"
+"0","library(baidumap)"
+"0","library(REmap)"
+"0","library(ggmap)"
+"2","Google Maps API Terms of Service: http://developers.google.com/maps/terms.
+"
+"2","Please cite ggmap if you use it: see citation('ggmap') for details.
+"

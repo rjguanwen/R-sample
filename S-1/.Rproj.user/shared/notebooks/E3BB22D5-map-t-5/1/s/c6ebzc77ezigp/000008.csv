@@ -1,0 +1,5 @@
+"0","mymap3 <- map_layer_shenzheng + stat_density2d(data = data_shenzhen,aes(lng,lat,alpha = ..level..,fill=..level..),size=2,bins=100,geom=""polygon"")+"
+"0","  scale_fill_gradient(low=""blue"",high=""yellow"")+"
+"0","  scale_alpha(range = c(0.001,0.13),guide =FALSE)+"
+"0","  geom_density2d(data=data_shenzhen,aes(lng,lat),bins = 10,show.legend = F)+"
+"0","  geom_point(data = data_shenzhen,aes(lng,lat))"

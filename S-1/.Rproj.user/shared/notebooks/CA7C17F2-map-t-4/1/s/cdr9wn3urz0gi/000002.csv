@@ -1,0 +1,17 @@
+"0","remapB(title = ""Bmap 迁徙图示例"","
+"0","        color = ""Blue"","
+"0","        markLineData = demoC,"
+"0","        markPointData = demoC[,2])"
+"2","Please use your own baidu API!
+Set it using: options(remap.ak = ""XXXXX"")
+http://lbsyun.baidu.com"
+"1","Save img as:"
+"1"," "
+"1","C:\Users\zhengbin\AppData\Local\Temp\RtmpmIcdYq/ID_20170721162104_165764.html"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

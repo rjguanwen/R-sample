@@ -1,0 +1,14 @@
+"0","library(sp)"
+"0","library(ggplot2)"
+"0","library(ggmap)"
+"2","Google Maps API Terms of Service: http://developers.google.com/maps/terms.
+"
+"2","Please cite ggmap if you use it: see citation('ggmap') for details.
+"
+"0","library(devtools)"
+"0","library(baidumap)"
+"2","baidumap 0.2.2
+"
+"2","Apply an application from here: http://lbsyun.baidu.com/apiconsole/key
+Then register you key by running `options(baidumap.key = 'xxx')`
+"

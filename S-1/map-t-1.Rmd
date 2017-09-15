@@ -1,0 +1,50 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+```{r}
+
+library(maps)
+library(mapdata)
+library(maptools)
+```
+
+```{r}
+# 读取数据
+map <- readShapePoly('E:/workspaces/R/S-1/chinamapdata/bou2_4p.shp')
+# 画图
+plot(map)
+```
+```{r}
+# 查看数据
+length(map)
+```
+
+```{r}
+names(map)
+```
+
+```{r}
+table(iconv(map$NAME, from = 'GBK'))
+```
+
+```{r}
+iconv(map$NAME, from = 'GBK')
+```
+
+```{r}
+plot(map[1,])
+```
+
+```{r}
+plot(map[5,])
+```
+
+```{r}
+plot(map[9,])
+```
+

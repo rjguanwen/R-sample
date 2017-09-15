@@ -1,0 +1,33 @@
+"0","# 大连终端户分布"
+"0","dl_geoData = read.csv('D:/temp/POS_GPS_MAP1.csv', sep='\t')"
+"0","read.csv"
+"1","function (file, header = TRUE, sep = "","", quote = ""\\"""", dec = ""."", 
+"
+"1","    fill = TRUE, comment.char = """", ...) 
+"
+"1","read.table(file = file, header = header, sep = sep, quote = quote, 
+"
+"1","    dec = dec, fill = fill, comment.char = comment.char, ...)
+"
+"1","<bytecode: 0x000000001bf2d2b8>
+"
+"1","<environment: namespace:utils>
+"
+"0","pointData = data.frame(dl_geoData$name,"
+"0","                       color = c(rep(""skyblue"",7),"
+"0","                                 rep(""red"",200)))"
+"0","remapB(get_city_coord(""大连""),"
+"0","       zoom = 13,"
+"0","       title = ""大连终端户分布"","
+"0","       markPointData = pointData,"
+"0","       markPointTheme = markPointControl(symbol = 'pin',"
+"0","                                         symbolSize = 5,"
+"0","                                         effect = F),"
+"0","       geoData = dl_geoData)"
+"2","NAs introduced by coercion"
+"2","Please use your own baidu API!
+Set it using: options(remap.ak = ""XXXXX"")
+http://lbsyun.baidu.com"
+"1","Save img as:"
+"1"," "
+"1","C:\Users\zhengbin\AppData\Local\Temp\RtmpmIcdYq/ID_20170721164641_319481.html"

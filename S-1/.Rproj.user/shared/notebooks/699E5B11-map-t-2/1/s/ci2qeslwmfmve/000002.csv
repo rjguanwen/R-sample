@@ -1,0 +1,4 @@
+"0","map_data <- readShapePoly(file.choose())"
+"2","use rgdal::readOGR or sf::st_read"
+"2","Error in file.choose() : file choice cancelled
+"

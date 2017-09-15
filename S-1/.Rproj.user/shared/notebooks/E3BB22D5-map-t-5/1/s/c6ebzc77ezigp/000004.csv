@@ -1,0 +1,15 @@
+"0","options(baidumap.key = 'Z7PttuaHQfaM1sF42RN4fccX')"
+"0","data_shenzhen <- read.csv('D:/temp/POS_GPS_MAP.csv')"
+"0","p3 <- getBaiduMap(c(lon = 121.59347778143519,lat = 38.94870993830429),zoom = 10)"
+"2","trying URL 'http://api.map.baidu.com/staticimage?width=400&height=400&center=121.593477781435,38.9487099383043&zoom=10&scale=2'
+"
+"2","Content type 'image/png'"
+"2"," length 57147 bytes (55 KB)
+"
+"2","downloaded 55 KB
+
+"
+"2","Map from URL : http://api.map.baidu.com/staticimage?width=400&height=400&center=121.593477781435,38.9487099383043&zoom=10&scale=2
+"
+"0","map_layer_shenzheng <- ggmap(p3)"
+"0","print(map_layer_shenzheng)"

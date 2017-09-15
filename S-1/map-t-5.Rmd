@@ -1,0 +1,45 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+library(sp)
+library(ggplot2)
+
+library(ggmap)
+
+library(devtools)
+
+library(baidumap)
+
+
+```
+
+```{r}
+options(baidumap.key = 'Z7PttuaHQfaM1sF42RN4fccX')
+
+data_shenzhen <- read.csv('D:/temp/POS_GPS_MAP.csv')
+
+p3 <- getBaiduMap(c(lon = 121.59347778143519,lat = 38.94870993830429),zoom = 10)
+
+map_layer_shenzheng <- ggmap(p3)
+print(map_layer_shenzheng)
+map_layer_shenzheng$data
+
+mymap3 <- map_layer_shenzheng + stat_density2d(data = data_shenzhen,aes(lng,lat,alpha = ..level..,fill=..level..),size=2,bins=100,geom="polygon")+
+  scale_fill_gradient(low="blue",high="yellow")+
+  scale_alpha(range = c(0.001,0.13),guide =FALSE)+
+  geom_density2d(data=data_shenzhen,aes(lng,lat),bins = 10,show.legend = F)+
+  geom_point(data = data_shenzhen,aes(lng,lat))
+
+```
+
+```{r}
+print(mymap3)
+```
+

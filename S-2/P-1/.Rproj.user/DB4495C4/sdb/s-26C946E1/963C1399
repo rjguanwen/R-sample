@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "library(leaflet)\nlibrary(magrittr)\n\n# 输出带有标记的地图\n\nSFmap <- leaflet() %>%\n  addTiles() %>%\n  setView(118.46, 32.03, zoom=13) %>% # 设置经度，纬度和缩放比例\n  addMarkers(118.46, 32.03, popup='jiangsu') # 设定弹出信息\n\nSFmap\n  \n# 输出圆圈标记的地图\nSFmap <- leaflet() %>%\n  addTiles() %>%\n  setView(118.46, 32.03, zoom=13) %>% \n  addCircleMarkers(118.46, 32.03, popup='江苏', radius=10, color='red')\n\nSFmap\n\n# 建立多位置标注的地图\nsj = read.table('clipboard.txt', header=T)\nSFmap1 <- leaflet() %>%\n  addTiles() %>%\n  setView(118.4, 32.04, zoom=13) %>%\n  addMarkers(data=sj, lng=~X, lat=~Y, popup=sj$crime) # 设置多位置标签及地理位置\nSFmap1\n\n#不同事件的分区标注地图\nSFmap2 <- leaflet() %>%\n  addTiles() %>%\n  setView(118.46, 32.04, zoom=10) %>%\n  addCircleMarkers(data=sj, lng=~X, lat=~Y, radius=5, color=~ifelse(crime=='BRIBERY', 'red', 'blue'), \n                   clusterOptions=markerClusterOptions()) #对不同的事件进行标示\nSFmap2\n\n# z\ndl_cust = read.table('D:/dl_cust_info.csv', sep=',', header=T, fill=T)\n# ORIGINAL_LONGITUDE\tORIGINAL_LATITUDE\nDLmap1 = leaflet() %>%\n  addTiles() %>%\n  setView(122.0, 39.5, zoom=13) %>%\n  addMarkers(data=dl_cust, lng=~ORIGINAL_LONGITUDE, lat=~ORIGINAL_LATITUDE, popup=dl_cust$SHOP_NAME)\n\nDLmap1\n\n\n# 读取云POS零售户，并与商户信息关联\npos_cust = read.table('D:/temp/data_file/云pos零售户.csv', sep=',', header=T)\n#LICENSE_CODE\npos_cust_info <-  merge(dl_cust, pos_cust, by.x='LICENSE_CODE', by.y='LICENSE_CODE')\n# 在地图上展示云POS户\nDLmap2 = leaflet() %>%\n  addTiles() %>%\n  setView(122.0, 39.5, zoom=13) %>%\n  addMarkers(data=pos_cust_info, lng=~ORIGINAL_LONGITUDE, lat=~ORIGINAL_LATITUDE, popup=pos_cust_info$SHOP_NAME)\nDLmap2\n\n#按照不同颜色展示不同类型的云pos户\n# 直营店 合作 普通 使用者 不在发展 \ngetColor <- function(df_cust){\n  sapply(df_cust$DICT_VALUE, function(dict_value){\n    if(dict_value == '直营店'){\n      \"green\"\n    }else if(dict_value == '合作'){\n      \"blue\"\n    }else if(dict_value == '普通'){\n      \"orange\"\n    }else if(dict_value == '使用者'){\n      \"red\"\n    }else{\n      \"gray\"\n    }\n  })\n}\n\nicons <- awesomeIcons(\n  icon = 'ios-close',\n  iconColor = 'black',\n  library = 'ion',\n  markerColor = getColor(pos_cust_info)\n)\n\nleaflet(pos_cust_info) %>%\n  addTiles() %>%\n  addAwesomeMarkers(~ORIGINAL_LONGITUDE, ~ORIGINAL_LATITUDE, icon=icons, label=~SHOP_NAME)\n\n# Marker Clusters\nleaflet(pos_cust_info) %>%\n  addTiles() %>%\n  addMarkers(\n    clusterOptions = markerClusterOptions()\n  )\n\n# 读取云POS零售户，并与商户信息关联\nmarket = read.table('D:/temp/dl_market_info.csv', sep=',', header=T)\n\n\n#################################################\n# z\ncust_sales = read.table('D:\\\\temp\\\\data_file\\\\export\\\\玉溪（软）_H_all.csv', sep=',', header=T, fill=T, encoding = 'utf-8')\n\nsummary(cust_sales)\n\ngetColor2 <- function(cust_sale){\n  sapply(cust_sale$H, function(H_value){\n    if(is.na(H_value)){\n      \"blue\"\n    }else if(H_value < 1.578){\n      \"blue\"\n    }else if(H_value < 2.278){\n      \"green\"\n    }else if(H_value < 3.699){\n      \"yellow\"\n    }else{\n      \"red\"\n    }\n  })\n}\n\n# ORIGINAL_LONGITUDE\tORIGINAL_LATITUDE\nDLmap1 = leaflet() %>%\n  addTiles() %>%\n  setView(122.0, 39.5, zoom=13) %>%\n  addCircleMarkers(data=cust_sales, lng=~ORIGINAL_LONGITUDE, lat=~ORIGINAL_LATITUDE, \n                   radius=1, color=getColor2(cust_sales), \n                   popup=cust_sales$CUST_NAME)\nDLmap1\n\n",
+    "created" : 1502851200874.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "213885181",
+    "id" : "963C1399",
+    "lastKnownWriteTime" : 1504168456,
+    "last_content_update" : 1504168456306,
+    "path" : "E:/workspaces/R/S-2/P-1/map-leaflet.R",
+    "project_path" : "map-leaflet.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

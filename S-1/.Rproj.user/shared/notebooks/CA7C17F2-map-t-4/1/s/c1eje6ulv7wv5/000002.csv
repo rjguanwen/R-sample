@@ -1,0 +1,18 @@
+"0","pointData = data.frame(geoData$name,"
+"0","                       color = c(rep(""skyblue"",20),"
+"0","                                 rep(""red"",10)))"
+"0","remapB(get_city_coord(""上海""),"
+"0","       zoom = 13,"
+"0","       color = ""Blue"","
+"0","       title = ""上海美食"","
+"0","       markPointData = pointData,"
+"0","       markPointTheme = markPointControl(symbol = 'pin',"
+"0","                                         symbolSize = 5,"
+"0","                                         effect = F),"
+"0","       geoData = geoData)"
+"2","Please use your own baidu API!
+Set it using: options(remap.ak = ""XXXXX"")
+http://lbsyun.baidu.com"
+"1","Save img as:"
+"1"," "
+"1","C:\Users\zhengbin\AppData\Local\Temp\RtmpmIcdYq/ID_20170721161248_116096.html"

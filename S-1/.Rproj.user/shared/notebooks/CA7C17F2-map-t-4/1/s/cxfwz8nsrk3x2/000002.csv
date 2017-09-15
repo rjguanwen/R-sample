@@ -1,0 +1,13 @@
+"0","remapB(title = ""Remap:  markPoint示例"","
+"0","       color = ""Blue"","
+"0","       markPointData = demoC[,2],"
+"0","       markPointTheme = markPointControl(symbol = "
+"0","      ""image://https://lh3.googleusercontent.com/-Lp7pZIh_Am8/AAAAAAAAAAI/AAAAAAAAADQ/7vORCc61USg/s64-c/photo.jpg"","
+"0","                                        symbolSize = 15,"
+"0","                                       effect = F))"
+"2","Please use your own baidu API!
+Set it using: options(remap.ak = ""XXXXX"")
+http://lbsyun.baidu.com"
+"1","Save img as:"
+"1"," "
+"1","C:\Users\zhengbin\AppData\Local\Temp\RtmpmIcdYq/ID_20170721161335_120787.html"

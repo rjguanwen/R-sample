@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : ".libPaths()\nlibrary()\nsearch()\n\nv <- c('hello', 'loop')\ncnt <- 2\n\nrepeat{\n  print(v)\n  cnt <- cnt + 1\n  if(cnt > 5){\n    break\n  }\n}\n\ncity <- c(\"beijing\", \"shanghai\", \"dalian\", \"jinan\")\ntemperatrue <- c(30, 28, 25, 33)\nzipcode <- c(111111, 222222, 333333, 444444)\n\n# cbind() 将多个向量连接为一个dataframe\naddress = cbind(city, temperatrue, zipcode)\n\naddress\n\ncat(\"###第一个dataframe\")\n\n# 直接创建dataframe\nnew.address <- data.frame(\n  city = c(\"chongqing\", \"chengdu\"),\n  temperatrue = c(36, 32),\n  zipcode = c(\"555555\", \"666666\"),\n  stringAsFactors = FALSE\n)\n\nprint(new.address)\n\nnew.address.1 <- data.frame(\n  city = c(\"chongqing\", \"chengdu\"),\n  temperatrue = c(36, 32),\n  zipcode = c(\"555555\", \"666666\")\n)\n\nprint(new.address.1)\n\nall.adress <- rbind(address, new.address.1)\n\nall.adress\n",
+    "created" : 1501227708767.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1367242478",
+    "id" : "3EB4969E",
+    "lastKnownWriteTime" : 1501478973,
+    "last_content_update" : 1501478973014,
+    "path" : "E:/workspaces/R/S-2/P-1/study-1.r",
+    "project_path" : "study-1.r",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
